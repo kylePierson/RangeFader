@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+    <script src="../JS/jquery-ui-slider-pips.js"></script>
+    <link href="../CSS/jquery-ui-slider-pips.css" rel="stylesheet" /> 
+    <title></title>
+</head>
+<body>
+
+    <div data-role="main" class="ui-content">
+        <div id="circles-slider"></div>
+        </div>
+</body>
+</html>
+<script>
+    $("#circles-slider")
+    .slider({
+        min: 10000,
+        max: 250000,
+        value: 10000,
+        step: 40000
+    })
+    .slider("pips", {
+        rest: "pip",
+        prefix: "$",
+    });
+</script>
