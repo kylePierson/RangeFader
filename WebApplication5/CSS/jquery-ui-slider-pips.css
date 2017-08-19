@@ -25,23 +25,24 @@
 /* position each pip absolutely just below the default slider */
 /* and also prevent accidental selection */
 .ui-slider-pips .ui-slider-pip {
-  width: 2em;
-  height: 1em;
-  line-height: 1em;
-  position: absolute;
-  font-size: 0.8em;
-  color: #999;
-  overflow: visible;
-  text-align: center;
-  top: 20px;
-  left: 20px;
-  margin-left: -1em;
-  cursor: pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    width: 2em;
+    height: 1em;
+    line-height: 1em;
+    position: absolute;
+    font-size: 0.8em;
+    color: #06030B;
+    overflow: visible;
+    text-align: center;
+    top: 20px;
+    left: 20px;
+    margin-left: -1em;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight:bold;
 }
 
 .ui-state-disabled.ui-slider-pips .ui-slider-pip {
@@ -350,7 +351,7 @@
   top: -7px;
   margin-left: -11px;
   border: 2px solid #fffaf7;
-  background: #434d5a;
+  background: #0076AA;
 }
                     
 #circles-slider .ui-slider-pip {
@@ -396,3 +397,6 @@
   #circles-slider .ui-slider-pip.ui-slider-pip-selected-initial {
     color: #434d5a; }*/
 
+  .container .ui-content .row .btn-info{
+      margin:3px;
+  }

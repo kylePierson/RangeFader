@@ -7,26 +7,70 @@
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
     <script src="../JS/jquery-ui-slider-pips.js"></script>
-    <link href="../CSS/jquery-ui-slider-pips.css" rel="stylesheet" /> 
+    <link href="../CSS/jquery-ui-slider-pips.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
+    <div class="container">
+        <div data-role="main" class="ui-content">
+            <div id="circles-slider"></div>
 
-    <div data-role="main" class="ui-content">
-        <div id="circles-slider"></div>
+            <div class="row" style="margin-left:5%">
+                <!--<div class="col-md-2">-->
+                    <button id="btn1" class="btn btn-info col-md-2">Funeral Expenses</button>
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <button id="btn2" class="btn btn-info col-md-2" style="visibility:hidden">Childcare</button>
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <button id="btn3" class="btn btn-info col-md-2" style="visibility:hidden">Button 3</button>
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                    <button id="btn4" class="btn btn-info col-md-2" style="visibility:hidden">Button 4</button>
+                <!--</div>-->
+            </div>
         </div>
+    </div>
 </body>
 </html>
 <script>
     $("#circles-slider")
-    .slider({
-        min: 10000,
-        max: 250000,
-        value: 10000,
-        step: 40000
-    })
-    .slider("pips", {
-        rest: "pip",
-        prefix: "$",
-    });
+        .slider({
+            min: 10000,
+            max: 250000,
+            value: 10000,
+            step: 40000,
+            change: function (event, ui) {
+                console.log("Change event fired");
+                var value = $("#circles-slider").slider("option", "value");
+                console.log(value);
+                if (value === 10000) {
+                    $("#btn2").attr("style", "visibility:hidden");
+                    $("#btn3").attr("style", "visibility:hidden");
+                    $("#btn4").attr("style", "visibility:hidden");
+                } else if (value === 50000) {
+                    console.log(value);
+                    $("#btn2").attr("style", "visibility:visible");
+                    $("#btn3").attr("style", "visibility:hidden");
+                    $("#btn4").attr("style", "visibility:hidden");
+                } else if (value === 90000) {
+                    console.log(value);
+                    $("#btn2").attr("style", "visibility:visible");
+                    $("#btn3").attr("style", "visibility:visible");
+                    $("#btn4").attr("style", "visibility:hidden");
+                } else if (value === 130000) {
+                    $("#btn2").attr("style", "visibility:visible");
+                    $("#btn3").attr("style", "visibility:visible");
+                    $("#btn4").attr("style", "visibility:visible");
+                }
+            }
+        })
+        .slider("pips", {
+            rest: "pip",
+            prefix: "$",
+        });
 </script>
